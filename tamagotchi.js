@@ -11,11 +11,16 @@ class Tamagotchi {
     }
 
     greet(){
-
+        console.log(`Hello, I'm ${this.name}`)
     }
 
     status(){
-        
+        console.log(`********************
+        My mood is: ${this.mood}
+        I am this full: 8
+        My energy is: 9
+        I am ${!this.sick? "" : "not"} sick
+        ********************`)
     }
 }
 // Do not edit below this line

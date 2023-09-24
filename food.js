@@ -3,26 +3,25 @@ class Food {
   constructor(name, daysToSpoil, fresh) {
     this.name = name;
     this.daysToSpoil = daysToSpoil;
-    this.fresh = fresh;
+    this.fresh = true;
   }
 
   prepare() {
-    console.log(`the ${this.name} is being prepared`);
+    console.log(`${this.name} is being prepared`);
   }
 
   isFresh() {
-    this.daysToSpoil
-      ? `There are ${this.daysToSpoil} days left before ${this.name} spoils`
-      : `${this.name} has spoiled.`;
-
-      if(this.daysToSpoil === 0){
-        this.fresh = false
-      }
+    console.log(
+        this.daysToSpoil > 0
+        ? `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
+        : `${this.name} has spoiled.`
+    )
+    this.fresh = this.daysToSpoil ? false : true
   }
 
   aDayPasses() {
     this.daysToSpoil--;
-    this.isFresh
+    this.isFresh()
   }
 }
 
