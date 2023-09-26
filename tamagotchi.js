@@ -143,5 +143,12 @@ I am ${this.sick ? "" : "not"} sick
 
 }
 
+const zeus = new Tamagotchi ("Zeus")
+console.log(zeus.name)
+zeus.greet()
+zeus.status()
+zeus.play()
+zeus.status()
+
 // Do not edit below this line
 module.exports = Tamagotchi;
