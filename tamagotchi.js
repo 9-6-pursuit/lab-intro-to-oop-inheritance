@@ -33,9 +33,10 @@ class Tamagotchi {
     }
 
     medicate() {
-        if(!this.sick){
+        if(this.sick === true){
             this.full = 9;
             this.energy -= 3
+            this.sick = false
         }else {
             console.log("refusal to take medicine");
             this.energy -= 1
@@ -45,6 +46,8 @@ class Tamagotchi {
     play() {
         this.mood += 2;
         this.energy -= 1
+        this.full -= 1
+
        if(this.sick){
             this.mood -= 1
             this.energy -= 1
@@ -78,9 +81,9 @@ class Tamagotchi {
 
     badGuardian() {
         console.log(`rehomed`);
-        this.energy <= 0 ? this.rehomed = true : this.rehomed = false;
-        this.mood <= 0 ? this.rehomed = true : this.rehomed = false;
-        this.full <= 0 ? this.rehomed = true : this.rehomed = false;
+        if(this.energy <= 0 || this.mood <= 0 || this.full <=0){
+            this.rehomed = true
+        }
     }
 }
 // Do not edit below this line
