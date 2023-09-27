@@ -16,9 +16,9 @@ class Tamagotchi {
     status(){
         console.log(`********************
         My mood is: ${this.mood}
-        I am this full:
-        My energy is
-        I am not sick
+        I am this full: ${this.full}
+        My energy is: ${this.energy}
+        I am ${this.sick ? not : null} sick
         ********************`)
     }
 
@@ -30,6 +30,32 @@ class Tamagotchi {
             this.sick = true
         }
     }
+
+    medicate(){
+        if(this.sick = true){
+            this.full = 9
+            this.energy -= 3
+            this.sick = false
+        } else{
+            console.log(`refusal to take medicine`)
+            this.energy -= 1
+        }
+    }
+
+    play(){
+
+    }
+
+    sleep(){
+        this.energy += 4
+        this.full -= 3
+    }
+
+    timePasses(){
+
+    }
+
+
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
