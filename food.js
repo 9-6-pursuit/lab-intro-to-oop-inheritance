@@ -26,7 +26,6 @@ class Food {
 }
 let pineapples = new Food("Pineapple", -1);
 console.log(pineapples);
-console.log(pineapples.prepare());
 
 // Do not edit below this line
 module.exports = Food;

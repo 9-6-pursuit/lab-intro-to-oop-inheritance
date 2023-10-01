@@ -90,5 +90,7 @@ class Tamagotchi {
   }
 }
 
+const fir = new Tamagotchi ("Fir")
+console.log(fir.name)
 // Do not edit below this line
 module.exports = Tamagotchi;
