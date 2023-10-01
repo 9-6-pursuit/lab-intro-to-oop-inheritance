@@ -69,6 +69,25 @@ class Tamagotchi {
     this.energy += 4;
     this.full -= 3;
   }
+
+  timePasses() {
+    if (this.sick === true) {
+      this.mood -= 3;
+      this.fullness -= 2;
+      this.energy -= 2;
+    } else {
+      this.mood -= 2;
+      this.fullness -= 1;
+      this.energy -= 1;
+    }
+  }
+
+  badGuardian() {
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+      this.rehomed = true;
+      console.log("Tamagotchi has been rehomed.");
+    }
+  }
 }
 
 // Do not edit below this line
