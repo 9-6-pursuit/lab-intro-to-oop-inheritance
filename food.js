@@ -7,20 +7,24 @@ class Food {
         this.fresh=fresh
     }
 
-    prepare(name){
-        console.log(`${name} is being prepared`)
+    prepare(){
+        console.log(`${this.name} is being prepared`)
     }
 
-    isFresh(daysToSpoil, name){
-        if(daysToSpoil<1){
-            console.log(`${name} has spoiled.`)
+    isFresh(){
+        if(this.daysToSpoil<1){
+            console.log(`${this.name} has spoiled.`)
         } else {
-        console.log(`There are ${daysToSpoil} days left before ${name} spoils.`)
+        console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`)
+        }
+        if(this.daysToSpoil<1){
+            this.isFresh = false;
         }
     }
 
     aDayPasses(){
-
+        this.daysToSpoil--
+        this.isFresh()
     }
 }
 
