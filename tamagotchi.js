@@ -32,7 +32,7 @@ class Tamagotchi {
     }
 
     medicate(){
-        if(this.sick = true){
+        if(this.sick === true){
             this.full = 9
             this.energy -= 3
             this.sick = false
@@ -43,6 +43,22 @@ class Tamagotchi {
     }
 
     play(){
+        if(this.sick === true){
+            this.energy -= 1
+            this.mood -= 1
+        } else if(this.mood > 9){
+            this.energy -= 2
+            this.full -= 1
+        } else if(this.energy <= 3){
+            console.log(`I am too tired to play`)
+            this.energy -= 1
+            return null
+        } else{
+            this.mood += 2
+            this.energy -= 1
+            this.full -= 1
+        }
+
 
     }
 
@@ -52,10 +68,26 @@ class Tamagotchi {
     }
 
     timePasses(){
-
+        if(this.sick === false){
+            this.mood -= 2
+            this.full -= 1
+            this.energy -= 1
+        } else {
+            this.mood -= 3
+            this.full -= 2
+            this.energy -= 2
+        }
     }
 
+        badGuardian(){
+            if(this.mood <= 0 || this.energy <= 0 || this.energy === true){
+                console.log(`I got rehomed cuz you suck as a Guardian lol`)
+                return  this.rehomed = true
+            }
+            }
+        }
 
-}
+
+
 // Do not edit below this line
 module.exports = Tamagotchi;
