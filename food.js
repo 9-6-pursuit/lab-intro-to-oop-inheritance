@@ -15,7 +15,7 @@ class Food {
       console.log(`${this.name} has spoiled.`);
     } else {
       console.log(
-        `There is ${this.daysToSpoil} days left before ${this.name} spoils`
+        `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
     }
   }
